@@ -8,7 +8,7 @@ function loadMenu()
 document.write('<table cellspacing=0 cellpadding=0 width=100% bgcolor=white style="position:fixed;top:0;z-index:1000;table-layout:fixed"><tr>\
 <td class=menu><a href="/htmlwf1/index1.html" class=w>首 页</a></td><td width=1></td>\
 <td class=menu><a href="/htmlwf1/download.html" class=w>下 载</a></td><td width=1></td>\
-<td class=menu><a href="/htmlwf1/javascript:goPic();" class=w>图 片</a></td><td width=1></td>\
+<td class=menu><a href="/htmlwf1/picture2.html" class=w>图 片</a></td><td width=1></td>\
 <td class=menu><a href="/htmlwf1/player.html" class=w>视 频</a></td><td width=1></td>\
 <td class=menu><a href="/htmlwf1/3tui.html" class=w>三 退</a></td></tr></table><div style="height:2em"></div>');
 
