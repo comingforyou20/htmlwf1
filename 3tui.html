@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>ÕæÏà£­ÈýÍË</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>çœŸç›¸ï¼ä¸‰é€€</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -16,33 +17,48 @@ blockquote{background-color:#f5f2f0;padding:1.2em 0.6em;margin:0;border-width:1e
 </head>
 <body>
 <script src="menu.js"></script>
-<script src="3tui.js"></script>
+<script src="jwplayer/jwplayer.js"></script>
+
 <div align=center><img src="images/tuidang.jpg" style="max-width:100%"></div>
 <div style="padding:5px 0 0 1px">
-<font color=#404040><i>ÄúÊÇ·ñÒÀÈ»¼ÇµÃ£¬ÔÚÑªÆìÏÂ·¢¹ýµÄ¶¾ÊÄ--°ÑÉúÃüÏ×¸øÐ°µ³£¿ÄÇÊÇÄúÒ»ÇÐ²»ÐÒµÄ¸ùÔ´¡£ÈýÍË±£Æ½°²£¬Ô¸ºÃÈËÒ»ÉúÆ½°²¡£</i></font><br>
+<font color=#404040><i>æ‚¨æ˜¯å¦ä¾ç„¶è®°å¾—ï¼Œåœ¨è¡€æ——ä¸‹å‘è¿‡çš„æ¯’èª“--æŠŠç”Ÿå‘½çŒ®ç»™é‚ªå…šï¼Ÿé‚£æ˜¯æ‚¨ä¸€åˆ‡ä¸å¹¸çš„æ ¹æºã€‚ä¸‰é€€ä¿å¹³å®‰ï¼Œæ„¿å¥½äººä¸€ç”Ÿå¹³å®‰ã€‚</i></font><br>
 
-<div align=center style="padding: 10px 0"><div class=tui onclick="doTui();" title="Ò»´ÎÍê³ÉÒ»ÈËÈýÍË">µ¥ÈËÈýÍË</div>¡¡¡¡¡¡<div class=tui onclick="doTui1();" title="Ò»´ÎÍê³É¶àÈËÈýÍË">¶àÈËÈýÍË</div></div>
-¡ù ÔøÈë¹ýµ³ÍÅ¶Ó»òÐ¡Ê±ºò´÷¹ýºìÁì½í¶¼ÐèÒªÍË£¬°ïÇ×ÓÑ»òÆäËûÈËÈýÍË±ØÐëÕ÷µÃ±¾ÈËÍ¬Òâ¡£ÒÑ×ö¹ýÈýÍËµÄÇëÎðÖØ¸´ÈýÍË¡£<br>
-¡ù Èë¹ýÊ²Ã´ÍËÊ²Ã´£¬Èë¹ýµ³ÇëÑ¡ÍËµ³£¬Èë¹ýÍÅÇëÑ¡ÍËÍÅ£¬Èë¹ý¶Ó»òÐ¡Ê±ºò´÷¹ýºìÁì½íÇëÑ¡ÍË¶Ó¡£<br>
-¡ù ÈýÍËÊÇ°²È«µÄ£¬²»»á¼ÇÂ¼ÄúµÄ¸öÈËÐÅÏ¢£¬Çë·ÅÐÄÈýÍË¡£<a  id=msg name=msg></a>
+
+
+â€» æ›¾å…¥è¿‡å…šå›¢é˜Ÿæˆ–å°æ—¶å€™æˆ´è¿‡çº¢é¢†å·¾éƒ½éœ€è¦é€€ï¼Œå¸®äº²å‹æˆ–å…¶ä»–äººä¸‰é€€å¿…é¡»å¾å¾—æœ¬äººåŒæ„ã€‚å·²åšè¿‡ä¸‰é€€çš„è¯·å‹¿é‡å¤ä¸‰é€€ã€‚<br>
+â€» å…¥è¿‡ä»€ä¹ˆé€€ä»€ä¹ˆï¼Œå…¥è¿‡å…šè¯·é€‰é€€å…šï¼Œå…¥è¿‡å›¢è¯·é€‰é€€å›¢ï¼Œå…¥è¿‡é˜Ÿæˆ–å°æ—¶å€™æˆ´è¿‡çº¢é¢†å·¾è¯·é€‰é€€é˜Ÿã€‚<br>
+â€» ä¸‰é€€æ˜¯å®‰å…¨çš„ï¼Œä¸ä¼šè®°å½•æ‚¨çš„ä¸ªäººä¿¡æ¯ï¼Œè¯·æ”¾å¿ƒä¸‰é€€ã€‚<a  id=msg name=msg></a>
 <br><br>
 
-<button onclick="submitMsg();" title="Ìá½»ÁôÑÔ">ÁôÑÔ</button> &nbsp; <span id="spChar" style="font-weight:bold"></span><br>
-<textarea id=taMsg rows=5 style="font-size:1em;font-family:Î¢ÈíÑÅºÚ;overflow-y:auto;width:98%;margin:3px 0;border:solid 1px #808080" oninput="charNum();" onpropertychange="charNum();"></textarea><br>
-Èç¹ûÄúÒª·´À¡£¬ÇëÔÚÉÏÃæÁôÑÔ£¨¿ÉÔÚÁôÑÔÖÐÈýÍË£¬Çë×¢Ã÷ÍË³öµÄÀàÐÍºÍ»¯Ãû£©¡£Èç¹ûÐèÒª½»Á÷£¬ÇëÁôÏÂÄúµÄÁªÏµ·½Ê½£¨µç»°/ÓÊ¼þ/QQ/Î¢ÐÅµÈ£©¡£
+
+<div id="vdi"></div>
+
+
+<script type="text/javascript" src="qr.js"></script>
+
+	<script> 
+	jwplayer('vdi').setup({
+			file: 'media/3t.mp4',
+			title:"ä¸ºä½•è¦ä¸‰é€€ å¦‚ä½•ä¸‰é€€",
+			width: '100%'				
+		});
+	</script> 
+
 <br><br>
 </div>
+
 <blockquote>
-<div align=center><b>´ó¼ÍÔªÖ£ÖØÉùÃ÷</b></div><br>
-¡¡¡¡¹ã´óµÄÖÐ¹úÃñÖÚ£º¹²²úµ³µÄÄ©ÈÕ¾ÍÒªµ½ÁË¡£µ«ÊÇÕâ¸öÐ°¶ñµÄµ³£¨Ä§½Ì£©ÔÚÀúÊ·ÉÏÈ´¶ÔÖÚÉú¡¢¶ÔÉñ·ð·¸ÏÂÁËÌÏÌì´ó×ï£¬ÉñÒ»¶¨ÒªÇåËãÕâ¸ö¶ñÄ§¡£ 
+<div align=center><b>å¤§çºªå…ƒéƒ‘é‡å£°æ˜Ž</b></div><br>
+ã€€ã€€å¹¿å¤§çš„ä¸­å›½æ°‘ä¼—ï¼šå…±äº§å…šçš„æœ«æ—¥å°±è¦åˆ°äº†ã€‚ä½†æ˜¯è¿™ä¸ªé‚ªæ¶çš„å…šï¼ˆé­”æ•™ï¼‰åœ¨åŽ†å²ä¸Šå´å¯¹ä¼—ç”Ÿã€å¯¹ç¥žä½›çŠ¯ä¸‹äº†æ»”å¤©å¤§ç½ªï¼Œç¥žä¸€å®šè¦æ¸…ç®—è¿™ä¸ªæ¶é­”ã€‚ 
 <br><br>
-¡¡¡¡Èç¹ûÓÐÒ»Ìì£¬ÉñÖ¸Ê¹ÈËÀàµÄË­¶Ô¹²²úµ³ÇåËãÊ±£¬Ò²Ò»¶¨²»»á·Å¹ýÄÇÐ©ËùÎ½¼á¶¨µÄÐ°¶ñµ³Í½¡£ÎÒÃÇÖ£ÖØÉùÃ÷£ºËùÓÐ²Î¼Ó¹ý¹²²úµ³Óë¹²²úµ³ÆäËü×éÖ¯µÄ (±»Ð°¶ñ´òÉÏÊÞµÄÓ¡¼ÇµÄ)ÈË£¬¸Ï¿ìÍË³ö£¬Ä¨È¥Ð°¶ñµÄÓ¡¼Ç¡£Ò»µ©Ë­¶ÔÕâ¸öÄ§½ÌÇåËãÊ±£¬´ó¼ÍÔª´¢´æµÄ¼ÇÂ¼¿ÉÒÔÎªÉùÃ÷ÍË³ö¹²²úµ³ºÍ¹²²úµ³ÆäËü×éÖ¯µÄÈË×÷Ö¤¡£ 
+ã€€ã€€å¦‚æžœæœ‰ä¸€å¤©ï¼Œç¥žæŒ‡ä½¿äººç±»çš„è°å¯¹å…±äº§å…šæ¸…ç®—æ—¶ï¼Œä¹Ÿä¸€å®šä¸ä¼šæ”¾è¿‡é‚£äº›æ‰€è°“åšå®šçš„é‚ªæ¶å…šå¾’ã€‚æˆ‘ä»¬éƒ‘é‡å£°æ˜Žï¼šæ‰€æœ‰å‚åŠ è¿‡å…±äº§å…šä¸Žå…±äº§å…šå…¶å®ƒç»„ç»‡çš„ (è¢«é‚ªæ¶æ‰“ä¸Šå…½çš„å°è®°çš„)äººï¼Œèµ¶å¿«é€€å‡ºï¼ŒæŠ¹åŽ»é‚ªæ¶çš„å°è®°ã€‚ä¸€æ—¦è°å¯¹è¿™ä¸ªé­”æ•™æ¸…ç®—æ—¶ï¼Œå¤§çºªå…ƒå‚¨å­˜çš„è®°å½•å¯ä»¥ä¸ºå£°æ˜Žé€€å‡ºå…±äº§å…šå’Œå…±äº§å…šå…¶å®ƒç»„ç»‡çš„äººä½œè¯ã€‚ 
 <br><br>
-¡¡¡¡ÌìÍø»Ö»Ö£¬ÉÆ¶ñ·ÖÃ÷£»¿àº£ÓÐ±ß£¬ÉúËÀÒ»Äî¡£Ôø±»ÀúÊ·ÉÏ×îÐ°¶ñµÄÄ§½ÌËùÆÛÆ­µÄÈË£¬Ôø±»Ð°¶ñ´òÉÏÊÞµÄÓ¡¼ÇµÄÈË£¬Çë×¥×¡ÕâÉÔ×Ý¼´ÊÅµÄÁ¼»ú£¡ 
+ã€€ã€€å¤©ç½‘æ¢æ¢ï¼Œå–„æ¶åˆ†æ˜Žï¼›è‹¦æµ·æœ‰è¾¹ï¼Œç”Ÿæ­»ä¸€å¿µã€‚æ›¾è¢«åŽ†å²ä¸Šæœ€é‚ªæ¶çš„é­”æ•™æ‰€æ¬ºéª—çš„äººï¼Œæ›¾è¢«é‚ªæ¶æ‰“ä¸Šå…½çš„å°è®°çš„äººï¼Œè¯·æŠ“ä½è¿™ç¨çºµå³é€çš„è‰¯æœºï¼ 
 <br><br>
-<div align=center>´ó¼ÍÔª<br>2005Äê1ÔÂ12ÈÕ</div>
+<div align=center>å¤§çºªå…ƒ<br>2005å¹´1æœˆ12æ—¥</div>
 </blockquote>
 <br>
+
 <div align=center><img src="images/tuidang.png"><img src="images/2yi.jpg" width=160 height=62></div>
 <br><br>
 
@@ -54,9 +70,9 @@ function submitMsg()
 {
 	var s = taMsg.value.trim();
 	var n = s.length;
-	if (n == 0) {alert("ÇëÊäÈëÁôÑÔ£¡");return;}
-	if (n > MAXNUM) {alert("ÁôÑÔ²»ÄÜ³¬¹ý "+MAXNUM+" ×Ö£¡");return;}
-	if (!confirm("Ìá½»ÁôÑÔ£º\n\n"+s)) return;
+	if (n == 0) {alert("è¯·è¾“å…¥ç•™è¨€ï¼");return;}
+	if (n > MAXNUM) {alert("ç•™è¨€ä¸èƒ½è¶…è¿‡ "+MAXNUM+" å­—ï¼");return;}
+	if (!confirm("æäº¤ç•™è¨€ï¼š\n\n"+s)) return;
 	s = encodeURIComponent(s.replace(/\n/g, " "));
 	window.location.href = "msgok.html?data="+s+"&v="+djb(s);
 }
