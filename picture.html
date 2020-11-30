@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>ÕæÏà£­Í¼Æ¬£¨Çëµã»÷£©</title>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -34,8 +34,6 @@ body{background:#000;font-family:Arial,sans-serif;font-size:14px;color:#000;marg
 <div id="thumbs" class="swiper-container gallery-thumbs">
 	<div class="swiper-wrapper" id=p2></div>
 </div>
-
-<script type="text/javascript" src="qr.js"></script>
 
 <!-- Swiper JS -->
 <script src="swiper/swiper.min.js"></script>
@@ -79,7 +77,7 @@ body{background:#000;font-family:Arial,sans-serif;font-size:14px;color:#000;marg
 			si['file'] = t;
 			var j = t.indexOf(',');
 			if (j > 0) t = t.substr(0, j);
-			s += '<div class="swiper-slide" style="background-image:url(media/' +t+ ');' + ((si['attr'] & 2)==0 ? 'background-position:top center' : '') + '"></div>';
+			s += '<div class="swiper-slide" style="background-image:url(media1/' +t+ ');' + ((si['attr'] & 2)==0 ? 'background-position:top center' : '') + '"></div>';
 		}
 		$("#p1").html(s);
 		if (bThumb) $("#p2").html(s); else {$("#thumbs").hide();$("#swiper").css("height", "100%")}
@@ -130,7 +128,7 @@ body{background:#000;font-family:Arial,sans-serif;font-size:14px;color:#000;marg
 				for (i=0; i<n; ++i)
 				{
 					if (i > 0) s += '<div style="color:blue;font-size:1.5em;padding-top:2px"><b>' + (i+1) + '/' + n + '</b></div>';
-					s += '<img src="media/' +f[i]+ '"' +(bPD ? ' style="max-width:100%"' : '') + '>';
+					s += '<img src="media1/' +f[i]+ '"' +(bPD ? ' style="max-width:100%"' : '') + '>';
 				}
 				$("#pic").html(s);
 			}

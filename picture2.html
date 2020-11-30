@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>çœŸç›¸ï¼å›¾ç‰‡ï¼ˆè¯·ç‚¹å‡»ï¼‰</title>
-<meta charset="utf-8">
+<title>ÕæÏà£­Í¼Æ¬£¨Çëµã»÷£©</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -19,9 +18,6 @@
 <script src="data.js"></script>
 <div id=divList style="color:blue;font-size:1.2em;font-weight:bold" align=center></div>
 <div id=divPic align=center onclick="showList();"></div>
-
-<script type="text/javascript" src="qr.js"></script>
-
 <script>
 <!--
 	var g_div = null;
@@ -42,7 +38,7 @@
 			for (i=0; i<n; ++i)
 			{
 				if (i > 0) s += '<div style="color:blue;font-size:1.2em;padding-top:2px"><b>' + (i+1) + '/' + n + '</b></div>';
-				s += '<img src="media/' +f[i]+ '"' +(bPD ? ' style="max-width:100%"' : '') + '>';
+				s += '<img src="media1/' +f[i]+ '"' +(bPD ? ' style="max-width:100%"' : '') + '>';
 			}
 			divPic.innerHTML = s;
 		}
@@ -65,7 +61,7 @@
 			si['file'] = t;
 			var j = t.indexOf(',');
 			if (j > 0) t = t.substr(0, j);
-			s += '<div id=divTitle' +i+ ' style="padding-top:10px;padding-bottom:3px">ã€'+si['title']+'ã€‘</div><div id=divItem onclick="list(' +i+ ', divTitle' +i+ ');" style="height:'+h+'px;background-position:'+((si['attr'] & 2)==0 ? 'top center' : 'center center')+';background-image:url(media/' +t+ ');"></div>';
+			s += '<div id=divTitle' +i+ ' style="padding-top:10px;padding-bottom:3px">¡¾'+si['title']+'¡¿</div><div id=divItem onclick="list(' +i+ ', divTitle' +i+ ');" style="height:'+h+'px;background-position:'+((si['attr'] & 2)==0 ? 'top center' : 'center center')+';background-image:url(media1/' +t+ ');"></div>';
 		}
 		divList.innerHTML = s + '<div style="padding-top:10px;padding-bottom:2px">* * * * *</div>';
 	}
