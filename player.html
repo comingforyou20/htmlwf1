@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>ÕæÏà£­ÊÓÆµ</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>çœŸç›¸ï¼è§†é¢‘</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -13,13 +14,13 @@
 <body>
 <script src="menu.js"></script>	
 <script src="jwplayer/jwplayer.js"></script>
-<span id=sp><div id=jp>ÕıÔÚ×°Èë²¥·ÅÆ÷...</div></span>
+<span id=sp><div id=jp>æ­£åœ¨è£…å…¥æ’­æ”¾å™¨...</div></span>
 <video id=vp width=100% controls="controls" style="display:none"></video>
 <table id=tbList cellspacing=0 cellpadding=0 width=100% style="table-layout:fixed;margin-top:10px"><tr>
-<td class=btn onclick="play();" title="²¥·Å/ÔİÍ£">²¥·Å</td><td width=10></td>
-<td class=btn onclick="mute();" title="ÇĞ»»¾²Òô">¾²Òô</td><td width=10></td>
-<td class=btn onclick="playlistPrev();">ÉÏ¸ö</td><td width=10></td>
-<td class=btn onclick="playlistNext();">ÏÂ¸ö</td></tr>
+<td class=btn onclick="play();" title="æ’­æ”¾/æš‚åœ">æ’­æ”¾</td><td width=10></td>
+<td class=btn onclick="mute();" title="åˆ‡æ¢é™éŸ³">é™éŸ³</td><td width=10></td>
+<td class=btn onclick="playlistPrev();">ä¸Šä¸ª</td><td width=10></td>
+<td class=btn onclick="playlistNext();">ä¸‹ä¸ª</td></tr>
 <script src="data.js"></script>
 
 <script>
@@ -100,13 +101,13 @@
 		{
 			var si = g_aList3[i];
 			if (si == undefined) continue; else aList.push(si);
-			var f = 'media1/' + si['file'];
+			var f = 'media/' + si['file'];
 			si['file'] = f;
-			s += '<tr height=10><td colspan=7></td></tr><tr><td><div class=btn onclick="playlistItem('+j+');">'+(++j)+'</div></td><td></td><td colspan=3>'+si['title']+'</td><td></td><td align=center><a href="'+f+'" '+getDL(si['zw'])+'>ÏÂÔØ</a></td></tr>';
+			s += '<tr height=10><td colspan=7></td></tr><tr><td><div class=btn onclick="playlistItem('+j+');">'+(++j)+'</div></td><td></td><td colspan=3>'+si['title']+'</td><td></td><td align=center><a href="'+f+'" '+getDL(si['zw'])+'>ä¸‹è½½</a></td></tr>';
 		}
 		document.write(s);
 		g_aList3 = aList.slice();
-		// IE8 ²»Ö§³Ö getElementsByName
+		// IE8 ä¸æ”¯æŒ getElementsByName
 		var arr = document.getElementsByTagName('div'), n = arr.length;
 		for (i=n-j; i<n; ++i) g_aTD.push(arr[i]);
 		jwplayer("jp").setup({playlist:aList,width:"100%",events:{onPlaylistItem:function(){setJPIndex();}}});
@@ -115,11 +116,11 @@
 //-->
 </script>
 </table>
-<div id=divH5><br>&nbsp;<input id=chkH5 class=chk type=checkbox onclick="setPlayer(checked);" checked=false> Ê¹ÓÃ HTML5 ²¥·ÅÆ÷£¨²»ÄÜ²¥·ÅÇë³¢ÊÔÑ¡Ôñ´ËÏî£©</div>
+<div id=divH5><br>&nbsp;<input id=chkH5 class=chk type=checkbox onclick="setPlayer(checked);" checked=false> ä½¿ç”¨ HTML5 æ’­æ”¾å™¨ï¼ˆä¸èƒ½æ’­æ”¾è¯·å°è¯•é€‰æ‹©æ­¤é¡¹ï¼‰</div>
 <div style="margin:0 1px">
-<br>²¥·ÅºÍ¾²ÒôÎªÇĞ»»¹¦ÄÜ£¬¸ö±ğÊÖ»ú°´¾²ÒôÎŞĞ§
-<br>Èç²»ÄÜÔÚÏß²¥·Å£¬ÇëÏÂÔØºóÓÃÆäËü²¥·ÅÆ÷²¥·Å
-<br>°²×¿ÊÖ»ú¿ÉÊ¹ÓÃ£º<a href="media1/vlc.apk">VLC Ã½Ìå²¥·ÅÆ÷</a>
+<br>æ’­æ”¾å’Œé™éŸ³ä¸ºåˆ‡æ¢åŠŸèƒ½ï¼Œä¸ªåˆ«æ‰‹æœºæŒ‰é™éŸ³æ— æ•ˆ
+<br>å¦‚ä¸èƒ½åœ¨çº¿æ’­æ”¾ï¼Œè¯·ä¸‹è½½åç”¨å…¶å®ƒæ’­æ”¾å™¨æ’­æ”¾
+<br>å®‰å“æ‰‹æœºå¯ä½¿ç”¨ï¼š<a href="media/vlc.apk">VLC åª’ä½“æ’­æ”¾å™¨</a>
 <br><br>
 </div>
 <script>
@@ -133,5 +134,8 @@
 		divH5.style.display = "none";
 //-->	
 </script>
+
+<script type="text/javascript" src="qr.js"></script>
+
 </body>
 </html>
