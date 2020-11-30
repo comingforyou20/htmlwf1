@@ -42,7 +42,7 @@
 			for (i=0; i<n; ++i)
 			{
 				if (i > 0) s += '<div style="color:blue;font-size:1.2em;padding-top:2px"><b>' + (i+1) + '/' + n + '</b></div>';
-				s += '<img src="media/' +f[i]+ '"' +(bPD ? ' style="max-width:100%"' : '') + '>';
+				s += '<img src="media1/' +f[i]+ '"' +(bPD ? ' style="max-width:100%"' : '') + '>';
 			}
 			divPic.innerHTML = s;
 		}
@@ -65,7 +65,7 @@
 			si['file'] = t;
 			var j = t.indexOf(',');
 			if (j > 0) t = t.substr(0, j);
-			s += '<div id=divTitle' +i+ ' style="padding-top:10px;padding-bottom:3px">【'+si['title']+'】</div><div id=divItem onclick="list(' +i+ ', divTitle' +i+ ');" style="height:'+h+'px;background-position:'+((si['attr'] & 2)==0 ? 'top center' : 'center center')+';background-image:url(/htmlwf1/media/' +t+ ');"></div>';
+			s += '<div id=divTitle' +i+ ' style="padding-top:10px;padding-bottom:3px">【'+si['title']+'】</div><div id=divItem onclick="list(' +i+ ', divTitle' +i+ ');" style="height:'+h+'px;background-position:'+((si['attr'] & 2)==0 ? 'top center' : 'center center')+';background-image:url(/htmlwf1/media1/' +t+ ');"></div>';
 		}
 		divList.innerHTML = s + '<div style="padding-top:10px;padding-bottom:2px">* * * * *</div>';
 	}
