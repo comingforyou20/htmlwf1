@@ -101,7 +101,7 @@
 		{
 			var si = g_aList3[i];
 			if (si == undefined) continue; else aList.push(si);
-			var f = 'media/' + si['file'];
+			var f = 'media1/' + si['file'];
 			si['file'] = f;
 			s += '<tr height=10><td colspan=7></td></tr><tr><td><div class=btn onclick="playlistItem('+j+');">'+(++j)+'</div></td><td></td><td colspan=3>'+si['title']+'</td><td></td><td align=center><a href="'+f+'" '+getDL(si['zw'])+'>下载</a></td></tr>';
 		}
@@ -120,7 +120,7 @@
 <div style="margin:0 1px">
 <br>播放和静音为切换功能，个别手机按静音无效
 <br>如不能在线播放，请下载后用其它播放器播放
-<br>安卓手机可使用：<a href="/htmlwf1/media/vlc.apk">VLC 媒体播放器</a>
+<br>安卓手机可使用：<a href="/htmlwf1/media1/vlc.apk">VLC 媒体播放器</a>
 <br><br>
 </div>
 <script>
