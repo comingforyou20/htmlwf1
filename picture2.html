@@ -9,18 +9,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="full-screen" content="yes">
 <meta name="x5-full-screen" content="yes">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/htmlwf1/style.css">
 <style>
 #divItem{background-repeat:no-repeat;background-size:100%}
 </style>
 </head>
 <body bgcolor=#f5f5d5>
-<script src="menu.js"></script>
-<script src="data.js"></script>
+<script src="/htmlwf1/menu.js"></script>
+<script src="/htmlwf1/data.js"></script>
 <div id=divList style="color:blue;font-size:1.2em;font-weight:bold" align=center></div>
 <div id=divPic align=center onclick="showList();"></div>
 
-<script type="text/javascript" src="qr.js"></script>
+<script type="text/javascript" src="/htmlwf1/qr.js"></script>
 
 <script>
 <!--
@@ -65,7 +65,7 @@
 			si['file'] = t;
 			var j = t.indexOf(',');
 			if (j > 0) t = t.substr(0, j);
-			s += '<div id=divTitle' +i+ ' style="padding-top:10px;padding-bottom:3px">【'+si['title']+'】</div><div id=divItem onclick="list(' +i+ ', divTitle' +i+ ');" style="height:'+h+'px;background-position:'+((si['attr'] & 2)==0 ? 'top center' : 'center center')+';background-image:url(media/' +t+ ');"></div>';
+			s += '<div id=divTitle' +i+ ' style="padding-top:10px;padding-bottom:3px">【'+si['title']+'】</div><div id=divItem onclick="list(' +i+ ', divTitle' +i+ ');" style="height:'+h+'px;background-position:'+((si['attr'] & 2)==0 ? 'top center' : 'center center')+';background-image:url(/htmlwf1/media/' +t+ ');"></div>';
 		}
 		divList.innerHTML = s + '<div style="padding-top:10px;padding-bottom:2px">* * * * *</div>';
 	}
