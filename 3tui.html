@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>真相－三退</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="full-screen" content="yes">
+<meta name="x5-full-screen" content="yes">
+<link rel="stylesheet" href="style.css">
+<style>
+button{font-size:1.05em;margin-bottom:0.1em}
+blockquote{background-color:#f5f2f0;padding:1.2em 0.6em;margin:0;border-width:1em;border-color:#e0dfcc;border-style:solid}
+</style>
+</head>
+<body>
+<script src="menu.js"></script>
+<script src="3tui.js"></script>
+<div align=center><img src="images/tuidang.jpg" style="max-width:100%"></div>
+<div style="padding:5px 0 0 1px">
+<font color=#404040><i>您是否依然记得，在血旗下发过的毒誓--把生命献给邪党？那是您一切不幸的根源。三退保平安，愿好人一生平安。</i></font><br>
+
+<div align=center style="padding: 10px 0"><div class=tui onclick="doTui();" title="一次完成一人三退">单人三退</div>　　　<div class=tui onclick="doTui1();" title="一次完成多人三退">多人三退</div></div>
+※ 曾入过党团队或小时候戴过红领巾都需要退，帮亲友或其他人三退必须征得本人同意。已做过三退的请勿重复三退。<br>
+※ 入过什么退什么，入过党请选退党，入过团请选退团，入过队或小时候戴过红领巾请选退队。<br>
+※ 三退是安全的，不会记录您的个人信息，请放心三退。<a  id=msg name=msg></a>
+<br><br>
+
+<button onclick="submitMsg();" title="提交留言">留言</button> &nbsp; <span id="spChar" style="font-weight:bold"></span><br>
+<textarea id=taMsg rows=5 style="font-size:1em;font-family:微软雅黑;overflow-y:auto;width:98%;margin:3px 0;border:solid 1px #808080" oninput="charNum();" onpropertychange="charNum();"></textarea><br>
+如果您要反馈，请在上面留言（可在留言中三退，请注明退出的类型和化名）。如果需要交流，请留下您的联系方式（电话/邮件/QQ/微信等）。
+<br><br>
+</div>
+<blockquote>
+<div align=center><b>大纪元郑重声明</b></div><br>
+　　广大的中国民众：共产党的末日就要到了。但是这个邪恶的党（魔教）在历史上却对众生、对神佛犯下了滔天大罪，神一定要清算这个恶魔。 
+<br><br>
+　　如果有一天，神指使人类的谁对共产党清算时，也一定不会放过那些所谓坚定的邪恶党徒。我们郑重声明：所有参加过共产党与共产党其它组织的 (被邪恶打上兽的印记的)人，赶快退出，抹去邪恶的印记。一旦谁对这个魔教清算时，大纪元储存的记录可以为声明退出共产党和共产党其它组织的人作证。 
+<br><br>
+　　天网恢恢，善恶分明；苦海有边，生死一念。曾被历史上最邪恶的魔教所欺骗的人，曾被邪恶打上兽的印记的人，请抓住这稍纵即逝的良机！ 
+<br><br>
+<div align=center>大纪元<br>2005年1月12日</div>
+</blockquote>
+<br>
+<div align=center><img src="images/tuidang.png"><img src="images/2yi.jpg" width=160 height=62></div>
+<br><br>
+
+<script>
+<!--
+var MAXNUM = 100;
+String.prototype.trim=function() {return this.replace(/^\s+|\s+$/g, "");}
+function submitMsg()
+{
+	var s = taMsg.value.trim();
+	var n = s.length;
+	if (n == 0) {alert("请输入留言！");return;}
+	if (n > MAXNUM) {alert("留言不能超过 "+MAXNUM+" 字！");return;}
+	if (!confirm("提交留言：\n\n"+s)) return;
+	s = encodeURIComponent(s.replace(/\n/g, " "));
+	window.location.href = "msgok.html?data="+s+"&v="+djb(s);
+}
+
+function charNum() {spChar.innerHTML=taMsg.value.trim().length + "/" + MAXNUM;}
+//-->
+</script>
+</body>
+</html>

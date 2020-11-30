@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>真相－视频</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="full-screen" content="yes">
+<meta name="x5-full-screen" content="yes">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script src="menu.js"></script>	
+<script src="jwplayer/jwplayer.js"></script>
+<span id=sp><div id=jp>正在装入播放器...</div></span>
+<video id=vp width=100% controls="controls" style="display:none"></video>
+<table id=tbList cellspacing=0 cellpadding=0 width=100% style="table-layout:fixed;margin-top:10px"><tr>
+<td class=btn onclick="play();" title="播放/暂停">播放</td><td width=10></td>
+<td class=btn onclick="mute();" title="切换静音">静音</td><td width=10></td>
+<td class=btn onclick="playlistPrev();">上个</td><td width=10></td>
+<td class=btn onclick="playlistNext();">下个</td></tr>
+<script src="data.js"></script>
+
+<script>
+<!--
+	var g_bH5 = 0, g_nIndex = 0, g_aTD=[];
+
+	function isPlaying() {return !vp.paused && !vp.ended;}
+	function play() {if (!g_bH5) jwplayer().play(); else if (isPlaying()) vp.pause(); else vp.play();}
+	function mute() {if (g_bH5) vp.muted = !vp.muted; else jwplayer().setMute(!jwplayer().getMute());}
+	
+	function playlistPrev()
+	{
+		if (g_bH5) {if (g_nIndex > 0) {setIndex(g_nIndex-1);vp.src=g_aList3[g_nIndex]['file'];vp.play();}} else
+		if (jwplayer().getPlaylistIndex() > 0) jwplayer().playlistPrev();
+	}
+	
+	function playlistNext()
+	{
+		var n = g_aList3.length-1;
+		if (g_bH5) {if (g_nIndex < n) {setIndex(g_nIndex+1);vp.src=g_aList3[g_nIndex]['file'];vp.play();}} else
+		if (jwplayer().getPlaylistIndex() < n) jwplayer().playlistNext();
+	}
+	
+	function playlistItem(i)
+	{
+		if (!g_bH5)
+		{
+			var jwp = jwplayer(), s = jwp.getState();	// idle, buffering, playing, paused
+			if (jwp.getPlaylistIndex() == i)
+			{
+				if (s == "PAUSED") jwp.play(); else
+				if (s == "IDLE") {jwp.play();jwp.playlistItem(i);}
+			} else
+			{
+				if (s == "IDLE") jwp.play();
+				jwp.playlistItem(i);
+			}
+		} else
+			if (g_nIndex == i) {if (!isPlaying()) vp.play();} else {setIndex(i);vp.src = g_aList3[i]['file'];vp.play();}
+	}
+	
+	function setPlayer(b)
+	{
+		g_bH5 = b;
+		sp.style.display = b ? "none" : "inline";
+		vp.style.display = b ? "inline" : "none";
+		if (b)
+		{
+			if (jwplayer().getState() == "PLAYING") jwplayer().pause();
+			resetIndex();
+			setIndex(g_nIndex);
+		} else
+		{
+			if (isPlaying()) vp.pause();
+			setJPIndex();
+		}
+	}
+	
+	function setIndex(n)
+	{
+		g_aTD[g_nIndex].style.color = "white";
+		g_aTD[n].style.color = "orange";
+		g_nIndex = n;
+	}
+
+	function resetIndex() {for (var i=g_aTD.length-1; i>=0; --i) g_aTD[i].style.color = "white";}
+	function setJPIndex()
+	{
+		resetIndex();
+		var n = jwplayer().getPlaylistIndex();
+		if (n >= 0)	g_aTD[n].style.color = "orange";
+	}
+
+	function init()
+	{
+		var s = 	'', n = g_aList3.length, aList = [];
+		for (var i=0,j=0; i<n; ++i)
+		{
+			var si = g_aList3[i];
+			if (si == undefined) continue; else aList.push(si);
+			var f = 'media1/' + si['file'];
+			si['file'] = f;
+			s += '<tr height=10><td colspan=7></td></tr><tr><td><div class=btn onclick="playlistItem('+j+');">'+(++j)+'</div></td><td></td><td colspan=3>'+si['title']+'</td><td></td><td align=center><a href="'+f+'" '+getDL(si['zw'])+'>下载</a></td></tr>';
+		}
+		document.write(s);
+		g_aList3 = aList.slice();
+		// IE8 不支持 getElementsByName
+		var arr = document.getElementsByTagName('div'), n = arr.length;
+		for (i=n-j; i<n; ++i) g_aTD.push(arr[i]);
+		jwplayer("jp").setup({playlist:aList,width:"100%",events:{onPlaylistItem:function(){setJPIndex();}}});
+	}	
+	init();
+//-->
+</script>
+</table>
+<div id=divH5><br>&nbsp;<input id=chkH5 class=chk type=checkbox onclick="setPlayer(checked);" checked=false> 使用 HTML5 播放器（不能播放请尝试选择此项）</div>
+<div style="margin:0 1px">
+<br>播放和静音为切换功能，个别手机按静音无效
+<br>如不能在线播放，请下载后用其它播放器播放
+<br>安卓手机可使用：<a href="media1/vlc.apk">VLC 媒体播放器</a>
+<br><br>
+</div>
+<script>
+<!--
+	if (g_aList3.length > 0) setIndex(0);
+	if (!!(document.createElement('video').canPlayType))
+	{
+		chkH5.checked = false;
+		if (g_aList3.length > 0) {vp.src = g_aList3[0]['file'];vp.onended = function() {playlistNext();}}
+	} else
+		divH5.style.display = "none";
+//-->	
+</script>
+</body>
+</html>

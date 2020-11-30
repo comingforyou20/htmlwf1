@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>真相－图片（请点击）</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="full-screen" content="yes">
+<meta name="x5-full-screen" content="yes">
+<link rel="stylesheet" href="style.css">
+<style>
+#divItem{background-repeat:no-repeat;background-size:100%}
+</style>
+</head>
+<body bgcolor=#f5f5d5>
+<script src="menu.js"></script>
+<script src="data.js"></script>
+<div id=divList style="color:blue;font-size:1.2em;font-weight:bold" align=center></div>
+<div id=divPic align=center onclick="showList();"></div>
+<script>
+<!--
+	var g_div = null;
+
+	function showList()
+	{
+		divPic.style.display = "none";
+		divList.style.display = "";
+		window.scrollTo(0, g_div.offsetTop-25);
+	}
+    
+	function list(i, div)
+	{
+		if (div != g_div)
+		{
+			g_div = div;
+			var bPD = (g_aList2[i]['attr'] & 1) == 0, f = g_aList2[i]['file'].split(','), n = f.length, s = "";
+			for (i=0; i<n; ++i)
+			{
+				if (i > 0) s += '<div style="color:blue;font-size:1.2em;padding-top:2px"><b>' + (i+1) + '/' + n + '</b></div>';
+				s += '<img src="media1/' +f[i]+ '"' +(bPD ? ' style="max-width:100%"' : '') + '>';
+			}
+			divPic.innerHTML = s;
+		}
+		divPic.style.display = "";
+		divList.style.display = "none";
+		window.scrollTo(0, 0);
+	}
+	
+    function init()
+    {
+		var s = "", n = g_aList2.length, h = window.innerHeight, w = window.innerWidth, h2 = window.screen.height , w2 = window.screen.width;
+		if (typeof h != "number") if (document.compatMode == "CSS1Compat") {w=document.documentElement.clientWidth;h=document.documentElement.clientHeight;} else {w=document.body.clientWidth;h=document.body.clientHeight;}
+		if (h < w) h = w; else h = Math.abs(h-h2) < 3 || Math.abs(w-w2) < 3 ? Math.max(Math.max(h2, w2),  Math.ceil(Math.min(h2, w2) * 1.5)) : Math.max(h, Math.ceil(h2 * w / w2));
+		h = Math.ceil(h * 0.55);
+		for (var i=0; i<n; ++i)
+		{
+			var si = g_aList2[i];
+			if (si == undefined) continue;
+			var t = si['file'].replace(/\s+/g, "");
+			si['file'] = t;
+			var j = t.indexOf(',');
+			if (j > 0) t = t.substr(0, j);
+			s += '<div id=divTitle' +i+ ' style="padding-top:10px;padding-bottom:3px">【'+si['title']+'】</div><div id=divItem onclick="list(' +i+ ', divTitle' +i+ ');" style="height:'+h+'px;background-position:'+((si['attr'] & 2)==0 ? 'top center' : 'center center')+';background-image:url(media1/' +t+ ');"></div>';
+		}
+		divList.innerHTML = s + '<div style="padding-top:10px;padding-bottom:2px">* * * * *</div>';
+	}
+	init();
+//-->
+</script>
+</body>
+</html>
